@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <h2 class="timeShow text-3xl sm:text-6xl text-center text-amber-500 mt-4 sm:mt-14">
+    </h2>
+    <h2 class="dateShow text-3xl sm:text-6xl text-center text-amber-500 mt-4 sm:mt-14">
+
+    </h2>
+
+    <!-- show time -->
+    <script>
+        setInterval(currentTime, 1000)
+
+        function currentTime() {
+            let d = new Date();
+
+            let timeShow = d.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })
+
+            document.querySelector(".timeShow").textContent = timeShow;
+        }
+    </script>
+
+    <!-- show Time-->
+    <script>
+        let dates = new Date();
+        document.querySelector(".dateShow").innerHTML = `${dates.toLocaleDateString()}`;
+    </script>
+
+    <script src="./date_function/date_using_function.js"></script>
+</body>
+
+</html>
